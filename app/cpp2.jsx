@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import { router } from "expo-router";
 
 export default function PetSizeScreen() {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -19,6 +20,10 @@ export default function PetSizeScreen() {
       // Aquí puedes redirigir a la siguiente pantalla:
       // navigation.navigate('NextScreen');
     }
+  };
+
+  handleNextCpp = () => {
+    router.push("/cpp3");
   };
 
   return (
@@ -74,7 +79,7 @@ export default function PetSizeScreen() {
         <ProgressIndicator />
       </ProgressBar>
 
-      <SubmitButton onPress={handleSubmit}>
+      <SubmitButton onPress={handleNextCpp}>
         <SubmitButtonText>Siguiente</SubmitButtonText>
       </SubmitButton>
     </Container>
