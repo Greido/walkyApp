@@ -30,6 +30,10 @@ export default function AddPhotoScreen() {
     }
   };
 
+  const handleCpp5 = () => {
+    router.push("/cpp5");
+  };
+
   return (
     <Container>
       <Title>Añadí foto de tu mascota</Title>
@@ -56,7 +60,7 @@ export default function AddPhotoScreen() {
         <ProgressIndicator active />
       </ProgressBar>
 
-      <SubmitButton onPress={() => router.push("/ruta-siguiente")}>
+      <SubmitButton onPress={() => router.push("/cpp5")}>
         <SubmitButtonText>Siguiente</SubmitButtonText>
       </SubmitButton>
     </Container>
