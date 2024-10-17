@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { FontAwesome } from "@expo/vector-icons";
 
 export default function WalkyScreen() {
+  const [selectedTab, setSelectedTab] = useState("paseadores"); // Estado para manejar la pestaña seleccionada
+
   return (
     <Container>
       <Header>
@@ -12,77 +14,128 @@ export default function WalkyScreen() {
 
       <PetContainer>
         <PetCard>
-          {/* <PetImage source={require("../assets/dog.png")} /> */}
+          <PetImage source={{ uri: "https://link.to/dog-image" }} />
           <PetName>Barto</PetName>
         </PetCard>
         <EmptyPetCard />
       </PetContainer>
 
       <ButtonsContainer>
-        <TabButton selected>
-          <ButtonText selected>Paseadores</ButtonText>
+        <TabButton
+          selected={selectedTab === "paseadores"}
+          onPress={() => setSelectedTab("paseadores")}
+        >
+          <ButtonText selected={selectedTab === "paseadores"}>
+            Paseadores
+          </ButtonText>
         </TabButton>
-        <TabButton>
-          <ButtonText>Disponibles ahora</ButtonText>
+        <TabButton
+          selected={selectedTab === "disponibles"}
+          onPress={() => setSelectedTab("disponibles")}
+        >
+          <ButtonText selected={selectedTab === "disponibles"}>
+            Disponibles ahora
+          </ButtonText>
         </TabButton>
       </ButtonsContainer>
 
       <ScrollView>
-        <WalkerCard>
-          {/* <WalkerImage source={require("../assets/camila.png")} /> */}
-          <WalkerInfo>
-            <WalkerName>Camila</WalkerName>
-            <WalkerRating>
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star-half" size={16} color="#FFD700" />
-            </WalkerRating>
-          </WalkerInfo>
-          <HeartIcon>
-            <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
-          </HeartIcon>
-        </WalkerCard>
-
-        <WalkerCard>
-          {/* <WalkerImage source={require("../assets/juan.png")} /> */}
-          <WalkerInfo>
-            <WalkerName>Juan</WalkerName>
-            <WalkerRating>
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-            </WalkerRating>
-          </WalkerInfo>
-          <HeartIcon>
-            <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
-          </HeartIcon>
-        </WalkerCard>
-
-        <WalkerCard>
-          {/* <WalkerImage source={require("../assets/gina.png")} /> */}
-          <WalkerInfo>
-            <WalkerName>Gina</WalkerName>
-            <WalkerRating>
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star" size={16} color="#FFD700" />
-              <FontAwesome name="star-half" size={16} color="#FFD700" />
-            </WalkerRating>
-          </WalkerInfo>
-          <HeartIcon>
-            <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
-          </HeartIcon>
-        </WalkerCard>
+        {selectedTab === "paseadores" ? (
+          <>
+            <WalkerCard>
+              <WalkerImage source={{ uri: "https://link.to/camila-image" }} />
+              <WalkerInfo>
+                <WalkerName>Camila</WalkerName>
+                <WalkerRating>
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star-half" size={16} color="#FFD700" />
+                </WalkerRating>
+              </WalkerInfo>
+              <HeartIcon>
+                <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
+              </HeartIcon>
+            </WalkerCard>
+            {/* Más paseadores */}
+            <WalkerCard>
+              <WalkerImage source={{ uri: "https://link.to/camila-image" }} />
+              <WalkerInfo>
+                <WalkerName>Camila</WalkerName>
+                <WalkerRating>
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star-half" size={16} color="#FFD700" />
+                </WalkerRating>
+              </WalkerInfo>
+              <HeartIcon>
+                <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
+              </HeartIcon>
+            </WalkerCard>
+            <WalkerCard>
+              <WalkerImage source={{ uri: "https://link.to/camila-image" }} />
+              <WalkerInfo>
+                <WalkerName>Camila</WalkerName>
+                <WalkerRating>
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star-half" size={16} color="#FFD700" />
+                </WalkerRating>
+              </WalkerInfo>
+              <HeartIcon>
+                <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
+              </HeartIcon>
+            </WalkerCard>
+            <WalkerCard>
+              <WalkerImage source={{ uri: "https://link.to/camila-image" }} />
+              <WalkerInfo>
+                <WalkerName>Camila</WalkerName>
+                <WalkerRating>
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star-half" size={16} color="#FFD700" />
+                </WalkerRating>
+              </WalkerInfo>
+              <HeartIcon>
+                <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
+              </HeartIcon>
+            </WalkerCard>
+          </>
+        ) : (
+          <>
+            {/* Mostrar lista de paseadores disponibles ahora */}
+            <WalkerCard>
+              <WalkerImage source={{ uri: "https://link.to/juan-image" }} />
+              <WalkerInfo>
+                <WalkerName>Juan</WalkerName>
+                <WalkerRating>
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                  <FontAwesome name="star" size={16} color="#FFD700" />
+                </WalkerRating>
+              </WalkerInfo>
+              <HeartIcon>
+                <FontAwesome name="heart-o" size={24} color="#FFFFFF" />
+              </HeartIcon>
+            </WalkerCard>
+            {/* Más disponibles */}
+          </>
+        )}
       </ScrollView>
 
       <BottomNav>
         <NavItem>
           <FontAwesome name="home" size={28} color="#FFFFFF" />
         </NavItem>
-        <NavItem>
+        <NavItem onPress={() => navigation.navigate("calendar")}>
           <FontAwesome name="calendar" size={28} color="#FFFFFF" />
         </NavItem>
         <NavItem selected>
