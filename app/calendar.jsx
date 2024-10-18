@@ -49,11 +49,11 @@ export default function CalendarScreen() {
       </ScheduledCard>
 
       <BottomNav>
-        <NavItem onPress={() => navigation.navigate("mainscreen")}>
+        <NavItem onPress={() => navigation.navigate("mainScreen")}>
           <FontAwesome name="home" size={28} color="#FFFFFF" />
         </NavItem>
-        <NavItem>
-          <FontAwesome selected name="calendar" size={28} color="#FFFFFF" />
+        <NavItem selected>
+          <FontAwesome name="calendar" size={28} color="#000000" />
         </NavItem>
         <NavItem>
           <FontAwesome name="paw" size={28} color="#FF69B4" />
