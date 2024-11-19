@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { FontAwesome } from "@expo/vector-icons";
-
+import { useNavigation } from "expo-router";
 export default function WalkyScreen() {
   const [selectedTab, setSelectedTab] = useState("paseadores"); // Estado para manejar la pestaña seleccionada
-
+  const navigation = useNavigation();
   return (
     <Container>
       <Header>
@@ -132,6 +132,9 @@ export default function WalkyScreen() {
       </ScrollView>
 
       <BottomNav>
+        <NavItem onPress={() => navigation.navigate("Search")}>
+          <FontAwesome name="search" size={28} color="#FFFFFF" />
+        </NavItem>
         <NavItem>
           <FontAwesome name="home" size={28} color="#FFFFFF" />
         </NavItem>

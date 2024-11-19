@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { FontAwesome } from "@expo/vector-icons";
-
+import { useNavigation } from "expo-router";
 export default function CalendarScreen() {
   const [selectedTab, setSelectedTab] = useState("programados"); // Estado para alternar entre "Programados" y "Historial"
-
+  const navigation = useNavigation();
   return (
     <Container>
       <Header>
@@ -55,7 +55,7 @@ export default function CalendarScreen() {
         <NavItem selected>
           <FontAwesome name="calendar" size={28} color="#000000" />
         </NavItem>
-        <NavItem>
+        <NavItem onPress={() => navigation.navigate("mainScreen")}>
           <FontAwesome name="paw" size={28} color="#FF69B4" />
         </NavItem>
         <NavItem>
